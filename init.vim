@@ -1,21 +1,19 @@
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround'
-Plug 'shime/vim-livedown'
-Plug 'pseewald/vim-anyfold'
-
-" Display
-
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
+call plug#begin(stdpath("data") . '/plugged')
+  Plug 'scrooloose/nerdtree'
+  Plug 'mhinz/vim-startify'
+  Plug 'chriskempson/base16-vim'
+  Plug 'vimwiki/vimwiki'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'tpope/vim-surround'
+  Plug 'shime/vim-livedown'
+  Plug 'pseewald/vim-anyfold'
 call plug#end()
 
 " General 
 
+let mapleader=","  
 set hidden
 set nowrap
 set ignorecase
@@ -46,15 +44,18 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set laststatus=2
+syntax on
 
 nnoremap \\ :noh<return>
 
-" Theme
+" search file history with ,-e (fzf.vim)
+nnoremap <leader>e :History<CR>
 
-syntax enable
-set termguicolors
+" search all files with ,-p (fzf.vim)
+nnoremap <leader>p :Files<CR>
 
-" Airline theme
+" open/close file browser with ,-l (NERDTree)
+nnoremap <Leader>l :NERDTreeToggle<CR>
 
 " NERDTree
 
@@ -67,6 +68,6 @@ filetype plugin indent on
 autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 
-" Airline
-
-let g:airline_powerline_fonts = 1
+let base16colorspace=256
+colorscheme base16-horizon-dark
+set background=dark
