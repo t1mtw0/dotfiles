@@ -11,11 +11,5 @@
     "workbench.colorTheme": "Nord",
     "editor.lineNumbers": "relative",
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[go]": {
-        "editor.tabSize": 8
-    }
+    "explorer.confirmDragAndDrop": false
 }
